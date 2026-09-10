@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Miliki Spot | Authentic Nigerian Food in London</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root{
+  --black:#151513;
+  --cream:#f7f1e7;
+  --white:#fffdf8;
+  --green:#126b4f;
+  --gold:#c99a4a;
+  --muted:#6d6a62;
+  --line:#e5ddcf;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"DM Sans",Arial,sans-serif;
+  background:var(--white);
+  color:var(--black);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+}
+
+header{
+  height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  background:rgba(255,253,248,.96);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+  font-weight:700;
+}
+
+.logo span{
+  color:var(--green);
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  font-size:14px;
+  font-weight:700;
+}
+
+nav a:hover{
+  color:var(--green);
+}
+
+.order-nav{
+  background:var(--green);
+  color:white;
+  padding:11px 18px;
+  border-radius:50px;
+}
+
+.menu-btn{
+  display:none;
+  border:none;
+  background:var(--black);
+  color:white;
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:20px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:680px;
+  display:flex;
+  align-items:center;
+  padding:100px 6%;
+  color:white;
+  background:
+  linear-gradient(90deg,rgba(10,15,12,.90),rgba(10,15,12,.35)),
+  url("https://milikispot.co.uk/wp-content/themes/miliki-spot/assets/milikispotfoodontable.png");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+h1,h2,h3{
+  font-family:"Playfair Display",serif;
+}
+
+.hero h1{
+  font-size:clamp(48px,7vw,82px);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:650px;
+  color:#f0ece3;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:50px;
+  font-weight:700;
+  margin:5px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:var(--black);
+}
+
+.btn-white{
+  background:white;
+  color:var(--black);
+}
+
+.btn-green{
+  background:var(--green);
+  color:white;
+}
+
+.btn-black{
+  background:var(--black);
+  color:white;
+}
+
+/* GENERAL */
+
+section{
+  padding:90px 6%;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-tag{
+  color:var(--green);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.section-title{
+  font-size:clamp(38px,5vw,60px);
+  margin:12px 0 20px;
+  line-height:1.1;
+}
+
+.section-text{
+  color:var(--muted);
+  max-width:650px;
+}
+
+/* FOOD CARDS */
+
+.food-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:45px;
+}
+
+.food-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  transition:.3s;
+}
+
+.food-card:hover{
+  transform:translateY(-8px);
+}
+
+.food-image{
+  height:230px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Playfair Display",serif;
+  font-size:42px;
+  color:white;
+  background:linear-gradient(135deg,#5b2919,#bd7940);
+}
+
+.food-card:first-child .food-image{
+  background:
+  linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
+  url("https://milikispot.co.uk/wp-content/themes/miliki-spot/assets/milikispotfoodontable.png");
+  background-size:cover;
+  background-position:center;
+}
+
+.food-info{
+  padding:20px;
+}
+
+.food-info h3{
+  font-size:24px;
+}
+
+.food-info p{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:8px;
+}
+
+/* ABOUT */
+
+.cream{
+  background:var(--cream);
+}
+
+.two-column{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.two-column img{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  border-radius:25px;
+}
+
+/* SERVICES */
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+.service{
+  background:white;
+  padding:28px;
+  border-radius:20px;
+  border:1px solid var(--line);
+}
+
+.service h3{
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.service p{
+  color:var(--muted);
+}
+
+/* MENU */
+
+.menu-section{
+  background:var(--white);
+}
+
+.menu-category{
+  margin-top:55px;
+}
+
+.menu-category h2{
+  font-size:38px;
+  margin-bottom:20px;
+}
+
+.menu-item{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.menu-item p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.price{
+  color:var(--green);
+  font-weight:700;
+  white-space:nowrap;
+}
+
+/* CTA */
+
+.big-cta{
+  background:var(--black);
+  color:white;
+  border-radius:30px;
+  padding:60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+}
+
+.big-cta h2{
+  font-size:48px;
+  line-height:1.1;
+}
+
+.big-cta p{
+  color:#c9c5bd;
+  margin-top:12px;
+}
+
+/* CATERING */
+
+.catering{
+  background:var(--cream);
+}
+
+.form-box{
+  background:white;
+  max-width:850px;
+  margin:40px auto 0;
+  padding:35px;
+  border-radius:25px;
+  border:1px solid var(--line);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+}
+
+input,select,textarea{
+  width:100%;
+  margin-top:7px;
+  padding:14px;
+  border:1px solid #d8d0c3;
+  border-radius:12px;
+  font-family:inherit;
+  font-size:15px;
+}
+
+textarea{
+  min-height:130px;
+}
+
+/* GALLERY */
+
+.gallery{
+  columns:3 250px;
+  column-gap:18px;
+  margin-top:40px;
+}
+
+.gallery img,
+.gallery-box{
+  width:100%;
+  margin-bottom:18px;
+  border-radius:18px;
+  break-inside:avoid;
+}
+
+.gallery-box{
+  height:280px;
+  background:linear-gradient(135deg,var(--green),var(--gold));
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+.contact-card{
+  padding:30px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+}
+
+.contact-card h3{
+  font-size:28px;
+  margin-bottom:12px;
+}
+
+.contact-card p{
+  color:var(--muted);
+}
+
+/* ORDER */
+
+.order-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.order-card{
+  padding:40px 30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:white;
+}
+
+.order-card h2{
+  font-size:35px;
+}
+
+/* FOOTER */
+
+footer{
+  background:var(--black);
+  color:white;
+  padding:60px 6%;
+}
+
+.footer-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+
+footer h3{
+  font-size:30px;
+}
+
+footer p,
+footer a{
+  color:#b9b6ae;
+  font-size:14px;
+}
+
+footer a{
+  display:block;
+  margin:8px 0;
+}
+
+.copyright{
+  max-width:1200px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #363630;
+  color:#888;
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  header{
+    height:68px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  nav{
+    display:none;
+    position:absolute;
+    top:75px;
+    left:4%;
+    right:4%;
+    background:white;
+    flex-direction:column;
+    align-items:stretch;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  nav a{
+    padding:8px;
+  }
+
+  .hero{
+    min-height:620px;
+  }
+
+  .food-grid,
+  .service-grid,
+  .contact-grid,
+  .order-grid{
+    grid-template-columns:1fr;
+  }
+
+  .two-column{
+    grid-template-columns:1fr;
+  }
+
+  .two-column img{
+    height:350px;
+  }
+
+  .big-cta{
+    display:block;
+    padding:40px 30px;
+  }
+
+  .big-cta h2{
+    font-size:38px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<a href="#home" class="logo">
+Miliki <span>Spot</span>
+</a>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<nav id="nav">
+
+<a href="#home">Home</a>
+<a href="#menu">Menu</a>
+<a href="#catering">Catering</a>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#order" class="order-nav">Order Now</a>
+
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+Nigerian Food · New Cross, London
+</div>
+
+<h1>
+Authentic Nigerian flavours.
+Made to bring people together.
+</h1>
+
+<p>
+From Jollof Rice and Egusi to Suya and traditional Nigerian favourites,
+Miliki Spot brings the taste of Nigeria to New Cross, London.
+</p>
+
+<a href="#order" class="btn btn-gold">
+Order Now
+</a>
+
+<a href="#menu" class="btn btn-white">
+Explore Menu
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FAVOURITES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-tag">
+Start with the favourites
+</div>
+
+<h2 class="section-title">
+Made for your next craving.
+</h2>
+
+<p class="section-text">
+Discover some of the Nigerian dishes customers love at Miliki Spot.
+</p>
+
+
+<div class="food-grid">
+
+<div class="food-card">
+
+<div class="food-image"></div>
+
+<div class="food-info">
+
+<h3>Jollof Rice</h3>
+
+<p>
+Rich West African rice cooked with tomatoes,
+peppers and aromatic spices.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="food-card">
+
+<div class="food-image">
+EGUSI
+</div>
+
+<div class="food-info">
+
+<h3>Assorted Egusi</h3>
+
+<p>
+Rich melon-seed soup with assorted meats,
+spinach and Nigerian spices.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="food-card">
+
+<div class="food-image">
+SUYA
+</div>
+
+<div class="food-info">
+
+<h3>Suya</h3>
+
+<p>
+Spicy marinated meat grilled and served
+with onions and peppers.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="food-card">
+
+<div class="food-image">
+MAMA
+</div>
+
+<div class="food-info">
+
+<h3>Mama Miliki Combo</h3>
+
+<p>
+A generous Nigerian feast made for a serious appetite.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="cream" id="about">
+
+<div class="container two-column">
+
+<img
+src="https://milikispot.co.uk/wp-content/themes/miliki-spot/assets/drinkinfrontofmilikispot.jpg"
+alt="Miliki Spot Restaurant">
+
+<div>
+
+<div class="section-tag">
+Taste of Nigeria in New Cross
+</div>
+
+<h2 class="section-title">
+Good food. Warm hospitality. Proper Nigerian flavour.
+</h2>
+
+<p class="section-text">
+
+Miliki Spot serves authentic Nigerian food in New Cross, London,
+with options for customers to dine in, collect food,
+order delivery and plan catering for special events.
+
+</p>
+
+<br>
+
+<a href="#menu" class="btn btn-black">
+Explore Our Menu
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-tag">
+How you can enjoy Miliki Spot
+</div>
+
+<h2 class="section-title">
+One kitchen. Many occasions.
+</h2>
+
+<div class="service-grid">
+
+<div class="service">
+
+<h3>🍽 Dine In</h3>
+
+<p>
+Visit us in New Cross and enjoy Nigerian food in person.
+</p>
+
+</div>
+
+<div class="service">
+
+<h3>🛍 Collection</h3>
+
+<p>
+Choose your food and arrange collection.
+</p>
+
+</div>
+
+<div class="service">
+
+<h3>🛵 Delivery</h3>
+
+<p>
+Order through available delivery partners.
+</p>
+
+</div>
+
+<div class="service">
+
+<h3>🎉 Catering</h3>
+
+<p>
+Plan food for weddings, parties and special events.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+
+<div class="container">
+
+<div class="section-tag">
+The Miliki Menu
+</div>
+
+<h2 class="section-title">
+Nigerian food worth coming back for.
+</h2>
+
+
+<div class="menu-category">
+
+<h2>Rice</h2>
+
+<div class="menu-item">
+<div>
+<b>Jollof Rice</b>
+<p>Rich West African rice with tomatoes and spices.</p>
+</div>
+<div class="price">£10.00</div>
+</div>
+
+<div class="menu-item">
+<div>
+<b>Miliki Special Fried Rice</b>
+<p>Fragrant rice with vegetables, chicken and prawns.</p>
+</div>
+<div class="price">£12.00</div>
+</div>
+
+<div class="menu-item">
+<div>
+<b>White Rice</b>
+<p>Light and fluffy steamed rice.</p>
+</div>
+<div class="price">£5.62</div>
+</div>
+
+</div>
+
+
+<div class="menu-category">
+
+<h2>Soup</h2>
+
+<div class="menu-item">
+<div>
+<b>Seafood Okra</b>
+<p>Okra soup loaded with seafood.</p>
+</div>
+<div class="price">£16.00</div>
+</div>
+
+<div class="menu-item">
+<div>
+<b>Assorted Egusi</b>
+<p>Melon-seed soup with assorted meats and spinach.</p>
+</div>
+<div class="price">£14.00</div>
+</div>
+
+<div class="menu-item">
+<div>
+<b>Assorted Efo Riro</b>
+<p>Nigerian spinach stew with assorted meats.</p>
+</div>
+<div class="price">£14.00</div>
+</div>
+
+<div class="menu-item">
+<div>
+<b>Ogbono</b>
+<p>Rich Nigerian soup made from ground ogbono seeds.</p>
+</div>
+<div class="price">£14.00</div>
+</div>
+
+</div>
+
+
+<div class="menu-category">
+
+<h2>Swallow</h2>
+
+<div class="menu-item">
+<b>Pounded Yam</b>
+<div class="price">£4.00</div>
+</div>
+
+<div class="menu-item">
+<b>Eba</b>
+<div class="price">£4.00</div>
+</div>
+
+<div class="menu-item">
+<b>Amala</b>
+<div class="price">£4.00</div>
+</div>
+
+<div class="menu-item">
+<b>Wheat</b>
+<div class="price">£4.00</div>
+</div>
+
+</div>
+
+
+<div class="menu-category">
+
+<h2>Miliki Specials</h2>
+
+<div class="menu-item">
+<b>Abula (includes Amala)</b>
+<div class="price">£17.00</div>
+</div>
+
+<div class="menu-item">
+<b>Suya</b>
+<div class="price">£13.00</div>
+</div>
+
+<div class="menu-item">
+<b>Assorted Pepper Soup</b>
+<div class="price">£11.50</div>
+</div>
+
+<div class="menu-item">
+<b>House Special Sauce and Rice</b>
+<div class="price">£16.00</div>
+</div>
+
+<div class="menu-item">
+<b>Yam Porridge + 1 Protein</b>
+<div class="price">£15.00</div>
+</div>
+
+</div>
+
+
+<div class="menu-category">
+
+<h2>Protein & Sides</h2>
+
+<div class="menu-item">
+<b>Chicken</b>
+<div class="price">£3.00</div>
+</div>
+
+<div class="menu-item">
+<b>Beef</b>
+<div class="price">£5.00</div>
+</div>
+
+<div class="menu-item">
+<b>Turkey</b>
+<div class="price">£5.00</div>
+</div>
+
+<div class="menu-item">
+<b>Plantain</b>
+<div class="price">£3.00</div>
+</div>
+
+<div class="menu-item">
+<b>BBQ Wings</b>
+<div class="price">£6.00</div>
+</div>
+
+<div class="menu-item">
+<b>Lamb Chops</b>
+<div class="price">£9.75</div>
+</div>
+
+</div>
+
+<p class="section-text" style="margin-top:30px">
+Menu prices and availability should be verified with Miliki Spot before the official website launch.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CATERING CTA -->
+
+<section>
+
+<div class="container">
+
+<div class="big-cta">
+
+<div>
+
+<div class="eyebrow">
+Weddings · Parties · Events
+</div>
+
+<h2>
+Planning an event?
+Let us handle the food.
+</h2>
+
+<p>
+Tell us about your event, preferred dishes and guest count.
+</p>
+
+</div>
+
+<a href="#catering" class="btn btn-gold">
+Request Catering Quote
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CATERING -->
+
+<section class="catering" id="catering">
+
+<div class="container">
+
+<div class="section-tag">
+Request a catering quote
+</div>
+
+<h2 class="section-title">
+Tell us about your event.
+</h2>
+
+<p class="section-text">
+Send your event information and the enquiry can be sent directly to the Miliki Spot catering team.
+</p>
+
+
+<form class="form-box" id="cateringForm">
+
+<div class="form-grid">
+
+<div>
+
+<label>
+Full Name
+<input type="text" id="name" required>
+</label>
+
+</div>
+
+
+<div>
+
+<label>
+Email
+<input type="email" id="email" required>
+</label>
+
+</div>
+
+
+<div>
+
+<label>
+Phone
+<input type="tel" id="phone">
+</label>
+
+</div>
+
+
+<div>
+
+<label>
+Event Type
+
+<select id="eventType">
+
+<option>Wedding</option>
+<option>Birthday Party</option>
+<option>Corporate Event</option>
+<option>Traditional Celebration</option>
+<option>Other</option>
+
+</select>
+
+</label>
+
+</div>
+
+
+<div>
+
+<label>
+Event Date
+<input type="date" id="date">
+</label>
+
+</div>
+
+
+<div>
+
+<label>
+Number of Guests
+<input type="number" id="guests">
+</label>
+
+</div>
+
+
+<div class="full">
+
+<label>
+Venue / Location
+<input type="text" id="venue">
+</label>
+
+</div>
+
+
+<div class="full">
+
+<label>
+Preferred Dishes / Message
+
+<textarea id="message"
+placeholder="Tell us about your event and preferred Nigerian dishes..."></textarea>
+
+</label>
+
+</div>
+
+
+<div class="full">
+
+<button type="submit" class="btn btn-green">
+Send Catering Enquiry
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-tag">
+Gallery
+</div>
+
+<h2 class="section-title">
+Real food. Real Miliki moments.
+</h2>
+
+<div class="gallery">
+
+<img src="https://milikispot.co.uk/wp-content/themes/miliki-spot/assets/milikispotfoodontable.png">
+
+<img src="https://milikispot.co.uk/wp-content/themes/miliki-spot/assets/drinkinfrontofmilikispot.jpg">
+
+<div class="gallery-box">
+APPROVED EVENT<br>PHOTOS
+</div>
+
+<div class="gallery-box">
+MORE DELICIOUS<br>NIGERIAN FOOD
+</div>
+
+</div>
+
+<p class="section-text">
+For the official version, replace the placeholder sections with photos supplied or approved by Miliki Spot.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ORDER -->
+
+<section class="cream" id="order">
+
+<div class="container">
+
+<div class="section-tag">
+Order Miliki Spot
+</div>
+
+<h2 class="section-title">
+Choose how you want to enjoy it.
+</h2>
+
+
+<div class="order-grid">
+
+<div class="order-card">
+
+<div class="section-tag">Delivery</div>
+
+<h2>Deliveroo</h2>
+
+<p>
+Order Miliki Spot through Deliveroo.
+</p>
+
+<br>
+
+<a
+href="https://deliveroo.co.uk/menu/london/new-cross/miliki-spot-new-cross"
+target="_blank"
+class="btn btn-green">
+
+Order on Deliveroo
+
+</a>
+
+</div>
+
+
+<div class="order-card">
+
+<div class="section-tag">Delivery</div>
+
+<h2>Just Eat</h2>
+
+<p>
+Order Miliki Spot online through Just Eat.
+</p>
+
+<br>
+
+<a
+href="https://www.just-eat.co.uk/restaurants-milikispot--limited-new-cross/menu"
+target="_blank"
+class="btn btn-green">
+
+Order on Just Eat
+
+</a>
+
+</div>
+
+
+<div class="order-card">
+
+<div class="section-tag">Delivery</div>
+
+<h2>Uber Eats</h2>
+
+<p>
+Order Miliki Spot through Uber Eats.
+</p>
+
+<br>
+
+<a
+href="https://www.ubereats.com/gb/store/miliki-spot/KGinD4R8TUSk7DoG-INqGw"
+target="_blank"
+class="btn btn-green">
+
+Order on Uber Eats
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-tag">
+Contact Miliki Spot
+</div>
+
+<h2 class="section-title">
+Come by, call or send an enquiry.
+</h2>
+
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>📍 Visit Us</h3>
+
+<p>
+463 New Cross Rd<br>
+London SE14 6AJ
+</p>
+
+<br>
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=463+New+Cross+Rd+London+SE14+6AJ"
+target="_blank"
+class="btn btn-green">
+
+Get Directions
+
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>📞 Call Us</h3>
+
+<p>
+07572 127731
+</p>
+
+<br>
+
+<a
+href="tel:07572127731"
+class="btn btn-black">
+
+Call Now
+
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>✉️ Email Us</h3>
+
+<p>
+milikispotcateringco@gmail.com
+</p>
+
+<br>
+
+<a
+href="mailto:milikispotcateringco@gmail.com"
+class="btn btn-black">
+
+Send Email
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+Miliki Spot
+</h3>
+
+<p>
+Authentic Nigerian food in New Cross, London.
+Dine in, collect, order delivery or plan catering for your next event.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Explore</h3>
+
+<a href="#home">Home</a>
+<a href="#menu">Menu</a>
+<a href="#catering">Catering</a>
+<a href="#about">About</a>
+
+</div>
+
+
+<div>
+
+<h3>Contact</h3>
+
+<p>
+463 New Cross Rd<br>
+London SE14 6AJ
+</p>
+
+<a href="tel:07572127731">
+07572 127731
+</a>
+
+<a href="mailto:milikispotcateringco@gmail.com">
+Email Miliki Spot
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Miliki Spot. Website redesign concept.
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("active");
+}
+
+
+document.getElementById("cateringForm").addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  let name=document.getElementById("name").value;
+  let email=document.getElementById("email").value;
+  let phone=document.getElementById("phone").value;
+  let eventType=document.getElementById("eventType").value;
+  let date=document.getElementById("date").value;
+  let guests=document.getElementById("guests").value;
+  let venue=document.getElementById("venue").value;
+  let message=document.getElementById("message").value;
+
+  let subject="Miliki Spot Catering Enquiry";
+
+  let body=
+
+`Name: ${name}
+
+Email: ${email}
+
+Phone: ${phone}
+
+Event Type: ${eventType}
+
+Event Date: ${date}
+
+Number of Guests: ${guests}
+
+Venue: ${venue}
+
+Message:
+${message}`;
+
+  window.location.href=
+
+"mailto:milikispotcateringco@gmail.com?subject="
++encodeURIComponent(subject)
++"&body="
++encodeURIComponent(body);
+
+});
+
+</script>
+
+</body>
+</html>
